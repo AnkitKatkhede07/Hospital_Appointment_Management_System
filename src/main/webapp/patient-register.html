@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - Hospital Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            min-height:100vh;
+
+            background:
+            linear-gradient(135deg,#eef6ff 0%,#ffffff 50%,#eaf2ff 100%);
+
+            font-family:Arial,sans-serif;
+
+            display:flex;
+            align-items:center;
+        }
+
+        .page-wrap{
+            max-width:760px;
+        }
+
+        .brand-pill{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+
+            padding:10px 16px;
+
+            border-radius:999px;
+
+            background:rgba(37,99,235,0.10);
+
+            color:#2563eb;
+
+            font-weight:700;
+        }
+
+        .card-shell{
+            background:rgba(255,255,255,0.92);
+
+            border:1px solid rgba(255,255,255,0.6);
+
+            border-radius:28px;
+
+            box-shadow:
+            0 20px 50px rgba(15,23,42,0.10);
+
+            backdrop-filter:blur(14px);
+        }
+
+        .icon-circle{
+
+            width:72px;
+            height:72px;
+
+            border-radius:22px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            margin:0 auto;
+
+            background:
+            linear-gradient(135deg,#2563eb,#3b82f6);
+
+            color:#fff;
+
+            font-size:32px;
+            font-weight:700;
+
+            box-shadow:
+            0 12px 28px rgba(37,99,235,0.25);
+        }
+
+        .form-control,
+        .form-select{
+
+            height:52px;
+
+            border-radius:14px;
+
+            border:1px solid #dbe4f0;
+        }
+
+        .form-control:focus,
+        .form-select:focus{
+
+            border-color:#2563eb;
+
+            box-shadow:
+            0 0 0 0.2rem rgba(37,99,235,0.12);
+        }
+
+        .btn-gradient{
+
+            height:52px;
+
+            border:none;
+
+            border-radius:14px;
+
+            font-weight:700;
+
+            color:#fff;
+
+            background:
+            linear-gradient(135deg,#2563eb,#3b82f6);
+
+            box-shadow:
+            0 12px 24px rgba(37,99,235,0.20);
+        }
+
+        .btn-gradient:hover{
+            color:#fff;
+            opacity:0.95;
+        }
+
+        .small-link{
+            color:#2563eb;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        .small-link:hover{
+            text-decoration:underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container page-wrap py-4 py-md-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-lg-10">
+
+            <div class="card-shell p-4 p-md-5">
+
+                <div class="text-center mb-4">
+
+                    <div class="icon-circle mb-3">
+                        +
+                    </div>
+
+                    <div class="brand-pill mb-3">
+                        HealthCare+ • Patient Portal
+                    </div>
+
+                    <h2 class="fw-bold mb-2">
+                        Patient Registration
+                    </h2>
+
+                    <p class="text-muted mb-0">
+                        Create your account to book appointments online
+                    </p>
+
+                </div>
+
+                <!-- MESSAGE BOX -->
+                <div id="msgBox"></div>
+
+                <form action="registerPatient" method="post">
+
+                    <div class="row g-3">
+
+                        <div class="col-12">
+
+                            <label class="form-label fw-semibold">
+                                Name
+                            </label>
+
+                            <input type="text"
+                                   name="name"
+                                   class="form-control"
+                                   placeholder="Enter Name"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Age
+                            </label>
+
+                            <input type="number"
+                                   name="age"
+                                   class="form-control"
+                                   placeholder="Enter Age"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Gender
+                            </label>
+
+                            <select name="gender"
+                                    class="form-select"
+                                    required>
+
+                                <option value="">
+                                    Select Gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label fw-semibold">
+                                Mobile
+                            </label>
+
+                            <input type="text"
+                                   name="mobile"
+                                   class="form-control"
+                                   placeholder="Enter Mobile Number"
+                                   required>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label fw-semibold">
+                                Disease
+                            </label>
+
+                            <input type="text"
+                                   name="disease"
+                                   class="form-control"
+                                   placeholder="Enter Disease"
+                                   required>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label fw-semibold">
+                                Password
+                            </label>
+
+                            <input type="password"
+                                   name="password"
+                                   class="form-control"
+                                   placeholder="Enter Password"
+                                   required>
+
+                        </div>
+
+                        <div class="col-12 mt-2">
+
+                            <button type="submit"
+                                    class="btn btn-gradient w-100">
+
+                                Register
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div class="text-center mt-4">
+
+                    <p class="mb-2 text-muted">
+
+                        Already have an account?
+
+                        <a href="patient-login.html"
+                           class="small-link">
+
+                            Login
+
+                        </a>
+
+                    </p>
+
+                    <a href="index.html"
+                       class="small-link">
+
+                        &larr; Back to Home
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const msgBox = document.getElementById("msgBox");
+
+if(params.get("error") === "1"){
+
+    msgBox.innerHTML = `
+    
+    <div class="alert alert-danger text-center fw-semibold mb-4"
+         style="
+         border-radius:14px;
+         padding:16px;
+         font-size:16px;
+         ">
+         
+         Patient Registration Failed.
+         Please check your details and try again.
+         
+    </div>
+    
+    `;
+}
+
+if(params.get("success") === "1"){
+
+    msgBox.innerHTML = `
+    
+    <div class="alert alert-success text-center fw-semibold mb-4"
+         style="
+         border-radius:14px;
+         padding:16px;
+         font-size:16px;
+         ">
+         
+         Registration Successful.
+         Please login to continue.
+         
+    </div>
+    
+    `;
+}
+
+</script>
+
+</body>
+</html>

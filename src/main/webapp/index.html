@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Management System</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-icon me-2">
+                    <i data-lucide="heart" class="icon-white"></i>
+                </div>
+                <span class="brand-text">HealthCare+</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <!-- Left Content -->
+                <div class="col-lg-6">
+                    <div class="badge-custom mb-4">
+                        <i data-lucide="stethoscope" class="icon-sm me-2"></i>
+                        <span>Trusted Healthcare Provider</span>
+                    </div>
+
+                    <h1 class="display-3 fw-bold mb-4">
+                        Hospital Appointment
+                        <span class="gradient-text d-block">Management System</span>
+                    </h1>
+
+                    <p class="lead text-muted mb-4">
+                        Book your appointments online with ease. Access quality healthcare services at your convenience, anytime, anywhere.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <i data-lucide="clock" class="icon-blue me-2"></i>
+                            <span>24/7 Available</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i data-lucide="users" class="icon-blue me-2"></i>
+                            <span>Expert Doctors</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i data-lucide="calendar" class="icon-blue me-2"></i>
+                            <span>Easy Booking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6">
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1769147555720-71fc71bfc216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                             alt="Modern hospital building"
+                             class="img-fluid rounded-4 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section py-5" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Get Started Today</h2>
+                <p class="lead text-muted">Choose your access point to begin your healthcare journey with us</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Patient Register Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card">
+                        <div class="card-icon-wrapper bg-gradient-blue mb-4">
+                            <i data-lucide="user-plus" class="icon-white"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Patient Register</h3>
+                        <p class="text-muted mb-4">
+                            New to our hospital? Create your account to access our healthcare services and book appointments.
+                        </p>
+                        <button class="btn btn-gradient-blue w-100" onclick="window.location.href='patient-register.html'">
+                            Register Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Patient Login Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card">
+                        <div class="card-icon-wrapper bg-gradient-cyan mb-4">
+                            <i data-lucide="log-in" class="icon-white"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Patient Login</h3>
+                        <p class="text-muted mb-4">
+                            Already registered? Log in to manage your appointments, view medical records, and more.
+                        </p>
+                        <button class="btn btn-gradient-cyan w-100" onclick="window.location.href='patient-login.html'">
+                            Login
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin Login Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card">
+                        <div class="card-icon-wrapper bg-gradient-indigo mb-4">
+                            <i data-lucide="shield-check" class="icon-white"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Admin Login</h3>
+                        <p class="text-muted mb-4">
+                            Hospital staff and administrators can access the management dashboard and patient records.
+                        </p>
+                        <button class="btn btn-gradient-indigo w-100" onclick="window.location.href='admin-login.html'">
+                            Admin Access
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row g-4 text-center text-white">
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold mb-2">50K+</div>
+                    <div class="stat-label">Patients Served</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold mb-2">200+</div>
+                    <div class="stat-label">Expert Doctors</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold mb-2">15+</div>
+                    <div class="stat-label">Departments</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold mb-2">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Brand -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-icon me-2">
+                            <i data-lucide="heart" class="icon-white"></i>
+                        </div>
+                        <span class="h5 mb-0 text-white">HealthCare+</span>
+                    </div>
+                    <p class="text-light-gray">
+                        Your trusted partner in healthcare management. Providing quality medical services with care and compassion.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#appointments">Online Appointments</a></li>
+                        <li><a href="#emergency">Emergency Care</a></li>
+                        <li><a href="#lab">Lab Services</a></li>
+                        <li><a href="#telemedicine">Telemedicine</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="text-white mb-3">Contact Us</h5>
+                    <div class="contact-info">
+                        <div class="d-flex mb-3">
+                            <i data-lucide="phone" class="icon-blue me-2 flex-shrink-0"></i>
+                            <div class="text-light-gray">
+                                <div>+1 (555) 123-4567</div>
+                                <div>+1 (555) 765-4321</div>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i data-lucide="mail" class="icon-blue me-2 flex-shrink-0"></i>
+                            <div class="text-light-gray">info@healthcareplus.com</div>
+                        </div>
+                        <div class="d-flex">
+                            <i data-lucide="map-pin" class="icon-blue me-2 flex-shrink-0"></i>
+                            <div class="text-light-gray">
+                                123 Medical Center Drive,<br>
+                                Healthcare City, HC 12345
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="text-center text-light-gray">
+                <p class="mb-0">&copy; 2026 HealthCare+ Hospital Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

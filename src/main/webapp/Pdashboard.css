@@ -1,0 +1,351 @@
+@charset "UTF-8";
+
+/* =========================
+   PREMIUM PATIENT DASHBOARD
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:linear-gradient(135deg,#eef4ff 0%,#ffffff 55%,#f1f5ff 100%);
+    font-family:'Segoe UI',sans-serif;
+    overflow-x:hidden;
+    color:#0f172a;
+}
+
+.dashboard-section{
+    min-height:100vh;
+}
+
+/* HERO */
+
+.dashboard-hero{
+    background:rgba(255,255,255,0.78);
+    backdrop-filter:blur(20px);
+    border-radius:36px;
+    padding:60px;
+    box-shadow:0 10px 40px rgba(37,99,235,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.dashboard-hero::before{
+    content:"";
+    position:absolute;
+    width:360px;
+    height:360px;
+    background:#2563eb12;
+    border-radius:50%;
+    top:-140px;
+    right:-110px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:999px;
+    background:#dbeafe;
+    color:#2563eb;
+    font-weight:700;
+    font-size:0.95rem;
+}
+
+.hero-badge svg{
+    width:18px;
+    height:18px;
+}
+
+.hero-title{
+    font-size:clamp(2.6rem,4.8vw,4.2rem);
+    font-weight:900;
+    line-height:1.08;
+    letter-spacing:-0.04em;
+    color:#0f172a;
+    margin:0;
+}
+
+.hero-title span{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text{
+    color:#64748b;
+    font-size:1.08rem;
+    line-height:1.8;
+    max-width:650px;
+    margin-bottom:0;
+}
+
+.hero-image{
+    width:100%;
+    max-width:440px;
+    border-radius:28px;
+    box-shadow:0 22px 60px rgba(15,23,42,0.18);
+    transform:rotate(1.5deg);
+    transition:0.35s ease;
+}
+
+.hero-image:hover{
+    transform:rotate(0deg) scale(1.02);
+}
+
+.hero-stats{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.mini-stat{
+    background:white;
+    padding:18px 24px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    min-width:95px;
+}
+
+.mini-stat h3{
+    margin:0;
+    color:#2563eb;
+    font-weight:900;
+    font-size:1.45rem;
+    line-height:1.1;
+}
+
+.mini-stat p{
+    margin:4px 0 0;
+    color:#64748b;
+    font-size:0.92rem;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:2.45rem;
+    font-weight:900;
+    color:#0f172a;
+    margin-bottom:8px;
+    letter-spacing:-0.03em;
+}
+
+.section-title p{
+    color:#64748b;
+    font-size:1.03rem;
+    margin:0;
+}
+
+/* CARDS */
+
+.premium-card{
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:blur(18px);
+    border-radius:30px;
+    padding:34px 28px;
+    height:100%;
+    min-height:280px;
+    border:1px solid rgba(255,255,255,0.72);
+    box-shadow:0 12px 30px rgba(15,23,42,0.08);
+    position:relative;
+    overflow:hidden;
+    transition:0.35s ease;
+}
+
+.premium-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:0.12;
+    z-index:-1;
+    filter:blur(42px);
+}
+
+.premium-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 24px 50px rgba(37,99,235,0.16);
+}
+
+.blue-card::before{ background:#2563eb; }
+.cyan-card::before{ background:#06b6d4; }
+.purple-card::before{ background:#7c3aed; }
+.green-card::before{ background:#10b981; }
+
+.main-icon{
+    width:48px;
+    height:48px;
+    margin-bottom:20px;
+    stroke-width:2.2;
+}
+
+.blue-icon{ color:#2563eb; }
+.cyan-icon{ color:#06b6d4; }
+.purple-icon{ color:#7c3aed; }
+.green-icon{ color:#10b981; }
+
+.premium-card h4{
+    font-size:1.45rem;
+    font-weight:800;
+    color:#0f172a;
+    margin-bottom:12px;
+}
+
+.premium-card p{
+    color:#64748b;
+    line-height:1.75;
+    font-size:0.98rem;
+    margin-bottom:22px;
+}
+
+.premium-btn{
+    width:100%;
+    padding:14px 16px;
+    border:none;
+    border-radius:16px;
+    color:#fff;
+    font-weight:700;
+    transition:0.3s ease;
+    text-decoration:none;
+    display:inline-block;
+    text-align:center;
+}
+
+.premium-btn:hover{
+    transform:translateY(-2px);
+    color:#fff;
+}
+
+.blue-btn{ background:linear-gradient(135deg,#2563eb,#3b82f6); }
+.cyan-btn{ background:linear-gradient(135deg,#06b6d4,#2563eb); }
+.purple-btn{ background:linear-gradient(135deg,#7c3aed,#6366f1); }
+.green-btn{ background:linear-gradient(135deg,#10b981,#059669); }
+
+/* BANNER */
+
+.appointment-banner{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    border-radius:28px;
+    padding:24px 34px;
+    color:white;
+    box-shadow:0 18px 40px rgba(37,99,235,0.20);
+}
+
+.appointment-banner h2{
+    font-size:1.85rem;
+    font-weight:900;
+    margin-bottom:8px;
+    letter-spacing:-0.02em;
+}
+
+.appointment-banner p{
+    opacity:0.92;
+    margin:0;
+    font-size:0.98rem;
+}
+
+.emergency-btn{
+    background:white;
+    color:#2563eb;
+    font-weight:800;
+    padding:12px 22px;
+    border-radius:14px;
+    border:none;
+    transition:0.3s ease;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.emergency-btn:hover{
+    transform:translateY(-2px);
+    color:#2563eb;
+    box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* LOGOUT */
+
+.logout-wrapper{
+    text-align:center;
+    margin-top:28px;
+}
+
+.logout-btn{
+    display:inline-block;
+    padding:12px 26px;
+    background:linear-gradient(135deg,#ff4d4d,#e60023);
+    color:#fff;
+    font-size:1rem;
+    font-weight:800;
+    border-radius:14px;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(230,0,35,0.25);
+    transition:0.3s ease;
+}
+
+.logout-btn:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(135deg,#ff1a1a,#cc0020);
+    color:#fff;
+    box-shadow:0 15px 30px rgba(230,0,35,0.35);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+    .dashboard-hero{
+        padding:36px 28px;
+        text-align:center;
+    }
+
+    .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-stats{
+        justify-content:center;
+    }
+
+    .hero-image{
+        max-width:380px;
+    }
+
+    .appointment-banner{
+        text-align:center;
+    }
+}
+
+@media(max-width:768px){
+    .dashboard-hero{
+        padding:28px 20px;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .hero-title{
+        font-size:2.55rem;
+    }
+
+    .premium-card{
+        min-height:260px;
+        padding:30px 24px;
+    }
+
+    .appointment-banner{
+        padding:22px 22px;
+    }
+
+    .appointment-banner h2{
+        font-size:1.55rem;
+    }
+}
