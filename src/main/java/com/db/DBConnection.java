@@ -16,7 +16,7 @@ public class DBConnection {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 String url =
-                    "jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+                    "jdbc:mysql://kodama.proxy.rlwy.net:40021/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
                 String user = "root";
                 String password = "XlXTHUwtHdnnmkVIsyWLSJIWECdGniZq";
