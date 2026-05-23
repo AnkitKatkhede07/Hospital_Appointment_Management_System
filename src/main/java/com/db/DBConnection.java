@@ -12,13 +12,18 @@ public class DBConnection {
         try {
 
             if (con == null || con.isClosed()) {
+
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/hospitalapp",
-                        "root",
-                        "Ankit@07");
+                String url =
+                    "jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+
+                String user = "root";
+                String password = "XlXTHUwtHdnnmkVIsyWLSJIWECdGniZq";
+
+                con = DriverManager.getConnection(url, user, password);
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
