@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.db.DBConnection;
-
 import org.model.Doctor;
+
+import com.db.DBConnection;
 
 public class DoctorRepository {
 
@@ -78,7 +78,7 @@ public class DoctorRepository {
         }
 
         return list;
-        
+
     }
  // Delete Doctor
     public boolean deleteDoctor(int id) {

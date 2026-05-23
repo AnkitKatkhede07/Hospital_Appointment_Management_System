@@ -10,16 +10,19 @@ public class PatientService {
     private final PatientRepository repo = new PatientRepository();
 
     public boolean registerPatient(Patient patient) {
-        if (patient == null) return false;
-
-        if (patient.getName() == null || patient.getName().isBlank()) return false;
-        if (patient.getAge() <= 0) return false;
+        if ((patient == null) || patient.getName() == null || patient.getName().isBlank() || (patient.getAge() <= 0)) {
+			return false;
+		}
 
         String mobile = normalizeMobile(patient.getMobile());
-        if (mobile == null) return false;
+        if (mobile == null) {
+			return false;
+		}
         patient.setMobile(mobile);
 
-        if (patient.getPassword() == null || patient.getPassword().isBlank()) return false;
+        if (patient.getPassword() == null || patient.getPassword().isBlank()) {
+			return false;
+		}
 
         return repo.registerPatient(patient);
     }
@@ -46,7 +49,9 @@ public class PatientService {
     }
 
     private String normalizeMobile(String mobile) {
-        if (mobile == null) return null;
+        if (mobile == null) {
+			return null;
+		}
 
         mobile = mobile.trim();
         mobile = mobile.replaceAll("[\\s\\-()]", "");

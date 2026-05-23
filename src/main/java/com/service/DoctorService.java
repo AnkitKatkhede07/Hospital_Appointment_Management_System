@@ -10,13 +10,21 @@ public class DoctorService {
     private final DoctorRepository repo = new DoctorRepository();
 
     public boolean addDoctor(Doctor doctor) {
-        if (doctor == null) return false;
-
-        if (doctor.getName() == null || doctor.getName().isBlank()) return false;
-        if (doctor.getSpecialization() == null || doctor.getSpecialization().isBlank()) return false;
-        if (doctor.getMobile() == null || doctor.getMobile().length() != 10) return false;
-        if (doctor.getEmail() == null || doctor.getEmail().isBlank()) return false;
-        if (doctor.getFees() < 0) return false;
+        if ((doctor == null) || doctor.getName() == null || doctor.getName().isBlank()) {
+			return false;
+		}
+        if (doctor.getSpecialization() == null || doctor.getSpecialization().isBlank()) {
+			return false;
+		}
+        if (doctor.getMobile() == null || doctor.getMobile().length() != 10) {
+			return false;
+		}
+        if (doctor.getEmail() == null || doctor.getEmail().isBlank()) {
+			return false;
+		}
+        if (doctor.getFees() < 0) {
+			return false;
+		}
 
         return repo.addDoctor(doctor);
     }
@@ -30,13 +38,16 @@ public class DoctorService {
     }
 
     public boolean updateDoctor(Doctor doctor) {
-        if (doctor == null) return false;
-        if (doctor.getId() <= 0) return false;
+        if ((doctor == null) || (doctor.getId() <= 0)) {
+			return false;
+		}
         return repo.updateDoctor(doctor);
     }
 
     public boolean deleteDoctor(int id) {
-        if (id <= 0) return false;
+        if (id <= 0) {
+			return false;
+		}
         return repo.deleteDoctor(id);
     }
 

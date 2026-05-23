@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.db.DBConnection;
 import org.model.Admin;
+
+import com.db.DBConnection;
 
 public class AdminRepository {
 

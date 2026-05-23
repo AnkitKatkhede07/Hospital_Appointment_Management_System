@@ -1,16 +1,18 @@
 package org.controler;
 
-import jakarta.servlet.ServletException;
-import com.service.DoctorService;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
 import org.model.Doctor;
+
+import com.service.DoctorService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 /**
@@ -19,7 +21,7 @@ import org.model.Doctor;
 @WebServlet("/viewDoctors")
 public class ViewDoctorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,6 +33,7 @@ public class ViewDoctorServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 
@@ -255,13 +258,14 @@ public class ViewDoctorServlet extends HttpServlet {
 
 		out.println("</html>");
 	}
-	
-	
-	
+
+
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

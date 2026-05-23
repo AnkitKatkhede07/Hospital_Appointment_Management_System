@@ -12,16 +12,13 @@ public class DBConnection {
         try {
 
             if (con == null || con.isClosed()) {
-
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 con = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/hospitalapp",
                         "root",
                         "Ankit@07");
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

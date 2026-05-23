@@ -10,11 +10,9 @@ public class AppointmentService {
     private final AppointmentRepository repo = new AppointmentRepository();
 
     public boolean bookAppointment(Appointment appt) {
-        if (appt == null) return false;
-
-        if (appt.getPatientId() <= 0) return false;
-        if (appt.getDoctorId() <= 0) return false;
-        if (appt.getAppointmentDate() == null) return false;
+        if ((appt == null) || (appt.getPatientId() <= 0) || (appt.getDoctorId() <= 0) || (appt.getAppointmentDate() == null)) {
+			return false;
+		}
 
         appt.setStatus("Pending");
         return repo.bookAppointment(appt);
@@ -29,8 +27,9 @@ public class AppointmentService {
     }
 
     public boolean updateStatus(int id, String status) {
-        if (id <= 0) return false;
-        if (status == null || status.isBlank()) return false;
+        if ((id <= 0) || status == null || status.isBlank()) {
+			return false;
+		}
 
         if (!status.equals("Pending") && !status.equals("Approved") && !status.equals("Rejected")) {
             return false;

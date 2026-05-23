@@ -1,16 +1,18 @@
 package org.controler;
 
-import jakarta.servlet.ServletException;
-import com.service.AppointmentService;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
 import org.model.Appointment;
+
+import com.service.AppointmentService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 /**
@@ -19,7 +21,7 @@ import org.model.Appointment;
 @WebServlet("/viewAppointments")
 public class ViewAllAppointmentsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,6 +33,7 @@ public class ViewAllAppointmentsServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AppointmentService service = new AppointmentService();
 		List<Appointment> list = service.getAllAppointments();
@@ -277,6 +280,7 @@ public class ViewAllAppointmentsServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.db.DBConnection;
 import org.model.Appointment;
+
+import com.db.DBConnection;
 
 public class AppointmentRepository {
 
