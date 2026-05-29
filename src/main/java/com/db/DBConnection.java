@@ -16,15 +16,12 @@ public class DBConnection {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 String url =
-                        "jdbc:mysql://nozomi.proxy.rlwy.net:53176/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+                    "jdbc:mysql://kodama.proxy.rlwy.net:40021/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
                 String user = "root";
-
-                String password = "UMUCrsMaiPoehDvHWuAviVjACqbjQRtp";
+                String password = "XlXTHUwtHdnnmkVIsyWLSJIWECdGniZq";
 
                 con = DriverManager.getConnection(url, user, password);
-
-                System.out.println("Railway MySQL Connected Successfully...");
             }
 
         } catch (Exception e) {
